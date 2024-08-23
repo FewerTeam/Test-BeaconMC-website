@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vérification des Plugins</title>
+</head>
+<body>
+    <h1>Soumettre un Plugin Python</h1>
+
+    <!-- Bouton de connexion GitHub -->
+    <div id="loginSection">
+        <a id="githubLogin" href="#">Se connecter avec GitHub</a>
+    </div>
+
+    <!-- Formulaire de soumission de plugin -->
+    <div id="uploadSection" style="display:none;">
+        <form id="uploadForm">
+            <label for="pluginFile">Choisissez un fichier .py :</label>
+            <input type="file" id="pluginFile" accept=".py">
+            <input type="submit" value="Soumettre">
+        </form>
+    </div>
+
+    <h2>Plugins Approuvés</h2>
+    <ul id="approvedPluginsList"></ul>
+
+    <script src="app.js"></script>
+</body>
+</html>
