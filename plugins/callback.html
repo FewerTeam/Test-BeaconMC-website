@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth Callback</title>
+</head>
+<body>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get('code');
+        const clientId = 'VOTRE_CLIENT_ID';  // Remplacez par votre Client ID GitHub
+        const clientSecret = 'VOTRE_CLIENT_SECRET';  // Remplacez par votre Client Secret GitHub
+        const redirectUri = 'https://votre-utilisateur.github.io/votre-repo/callback.html';
+
+        if (code) {
+            fetch('https://github.com/login/oauth/access_token', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    client_id: clientId,
+                    client_secret: clientSecret,
+                    code: code,
+                    redirect_uri: redirectUri
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.access_token) {
+                    localStorage.setItem('github_token', data.access_token);
+                    window.location.href = 'https://votre-utilisateur.github.io/votre-repo/';
+                } else {
+                    alert('Erreur lors de la récupération du token.');
+                }
+            });
+        } else {
+            alert('Erreur de retour OAuth2.');
+        }
+    </script>
+</body>
+</html>
