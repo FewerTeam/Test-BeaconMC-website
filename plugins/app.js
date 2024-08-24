@@ -1,4 +1,4 @@
-const clientId = 'VOTRE_CLIENT_ID';  // Remplacez par votre Client ID GitHub
+const clientId = '978243';  // Remplacez par votre Client ID GitHub
 const redirectUri = 'https://fewerteam.github.io/Test-BeaconMC-website/callback.html';
 
 document.getElementById('githubLogin').href = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=repo`;
