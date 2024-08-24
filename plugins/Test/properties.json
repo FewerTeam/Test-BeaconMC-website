@@ -1,0 +1,8 @@
+{
+    "name": "Tzst",
+    "version": "1.0.0",
+    "author": "AuteurDuPlugin",
+    "compatibleVersions": ["1.16", "1.17", "1.18"],
+    "originalVersion": "1.0.0",
+    "description": "Une brève description du plugin."
+}
