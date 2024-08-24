@@ -1,0 +1,8 @@
+{
+    "name": "PluginTest",
+    "version": "1.0.0",
+    "author": "FewerElk",
+    "compatibleVersions": ["1.16", "1.17", "1.18"],
+    "originalVersion": "1.0.0",
+    "description": "Test"
+}
