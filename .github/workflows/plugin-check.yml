@@ -1,0 +1,25 @@
+name: Check plugins
+
+on:
+  pull_request:
+    branches:
+      - verified-plugins
+
+jobs:
+  check_plugin:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Run Python Linter
+      run: |
+        flake8 plugins/
+
+    - name: Approve or Request Changes
+      if: success()
+      run: |
+        echo "ok."
+      else:
+      run: |
+        echo "Exceptions."
